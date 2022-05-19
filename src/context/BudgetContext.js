@@ -23,6 +23,12 @@ export const BudgetsProvider = ({ children }) => {
         })
     }
 
+    const addExpense = ({description, amount, budgetId}) => {
+        setExpenses(prevExpenses => {
+            return [...prevExpenses, {id: Date.now(), description, amount, budgetId}]
+        })
+    }
+
 
     return (
         <BudgetContext.Provider value={{
