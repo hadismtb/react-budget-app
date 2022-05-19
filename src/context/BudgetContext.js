@@ -14,6 +14,15 @@ export const BudgetsProvider = ({ children }) => {
       return expenses.filter(expense => expense.budgetId === budgetId)
     }
 
+    const addBudget = ({name, max}) => {
+        setBudgets(prevBudgets => {
+            if (prevBudgets.find(budget => budget.name === name)){
+                return prevBudgets
+            }
+            return [...prevBudgets, {id: Date.now(), name, max}]
+        })
+    }
+
 
     return (
         <BudgetContext.Provider value={{
