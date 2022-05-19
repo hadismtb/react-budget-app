@@ -1,5 +1,8 @@
 import React from 'react';
 
+//COMPONENTS
+import BudgetCard from "./BudgetCard";
+
 //STYLE
 const style = {
     display: "grid",
@@ -7,11 +10,16 @@ const style = {
     gap: "1rem",
     alignItems: "flex-start",
 }
+const testData = {name: "لباس",
+max: 300,
+    amount: 700
+}
+
 
 const Cards = () => {
     return (
         <div style={style}>
-            cards
+            <BudgetCard data={testData}/>
         </div>
     );
 };
