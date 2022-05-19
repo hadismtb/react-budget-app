@@ -29,6 +29,13 @@ export const BudgetsProvider = ({ children }) => {
         })
     }
 
+    const deleteBudget = ({id}) => {
+        setBudgets(prevBudgets => {
+            return prevBudgets.filter(budget => budget.id !== id)
+        })
+    }
+
+
 
     return (
         <BudgetContext.Provider value={{
