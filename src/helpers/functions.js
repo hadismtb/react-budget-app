@@ -1,7 +1,12 @@
 const currencyFormatter = new Intl.NumberFormat(undefined,{
-    currency: 'IRR',
+    currency: 'irr',
     style: 'currency',
     minimumFractionDigits: 0
 })
 
-export { currencyFormatter }
+const formatNumber = number => {
+    currencyFormatter.format(number).replace("IRR", "");
+    return ` ${number}تومان`
+}
+
+export { formatNumber }
