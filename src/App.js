@@ -15,7 +15,7 @@ function App() {
   return (
    <BudgetsProvider>
        <Container>
-           <Header/>
+           <Header handleAddBudgetModal={() => setShowAddBudgetModal(true)}/>
            <Cards/>
        </Container>
        <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
