@@ -2,6 +2,7 @@ import React from 'react';
 
 //COMPONENTS
 import BudgetCard from "./BudgetCard";
+import {useBudgets} from "../context/BudgetContext";
 
 //STYLE
 const style = {
@@ -10,16 +11,16 @@ const style = {
     gap: "1rem",
     alignItems: "flex-start",
 }
-const testData = {name: "لباس",
-max: 300,
-    amount: 700
-}
 
 
 const Cards = () => {
+    const { budgets } = useBudgets();
+
     return (
         <div style={style}>
-            <BudgetCard data={testData}/>
+            {
+                budgets.map(budget => <BudgetCard key={budget.id} data={budget} />)
+            }
         </div>
     );
 };

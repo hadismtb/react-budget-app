@@ -34,7 +34,7 @@ const AddBudgetModal = ({ show, handleClose }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="max">
                         <Form.Label>حداکثر مخارج</Form.Label>
-                        <Form.Control ref={maxRef} type="number" min={0} step={.01} required/>
+                        <Form.Control placeholder="مبلغ به تومان" ref={maxRef} type="number" min={0} step={.01} required/>
                     </Form.Group>
                     <div className="d-flex justify-content-end">
                         <Button variant="primary" type="submit">افزودن</Button>
