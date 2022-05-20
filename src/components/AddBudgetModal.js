@@ -15,9 +15,10 @@ const AddBudgetModal = ({ show, handleClose }) => {
 
         if (name.trim()){
             addBudget({name, max});
+            handleClose();
+        }else {
+            nameRef.current.focus()
         }
-
-        handleClose();
     }
 
     return (
