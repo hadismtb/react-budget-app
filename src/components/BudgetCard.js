@@ -5,7 +5,7 @@ import {Button, Card, ProgressBar, Stack} from "react-bootstrap";
 import { formatNumber } from "../helpers/functions";
 import {useBudgets} from "../context/BudgetContext";
 
-const BudgetCard = ({data}) => {
+const BudgetCard = ({data, openAddExpense}) => {
     const {name, max, id} = data;
 
     const { getBudgetExpenses } = useBudgets();
@@ -31,7 +31,7 @@ const BudgetCard = ({data}) => {
                 </Card.Title>
                 <ProgressBar className="rounded-pill" variant={getProgressBarVariant(amount, max)} min={0} max={max} now={amount}/>
                 <Stack direction="horizontal" gap="2" className="mt-4 justify-content-end">
-                    <Button variant="outline-primary">افزودن هزینه</Button>
+                    <Button variant="outline-primary" onClick={() => openAddExpense(id)}>افزودن هزینه</Button>
                     <Button variant="outline-secondary">مشاهده هزینه‌ها</Button>
                 </Stack>
             </Card.Body>

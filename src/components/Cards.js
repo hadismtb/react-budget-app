@@ -13,13 +13,13 @@ const style = {
 }
 
 
-const Cards = () => {
+const Cards = ({openAddExpense}) => {
     const { budgets } = useBudgets();
 
     return (
         <div style={style}>
             {
-                budgets.map(budget => <BudgetCard key={budget.id} data={budget} />)
+                budgets.map(budget => <BudgetCard openAddExpense={openAddExpense} key={budget.id} data={budget} />)
             }
         </div>
     );

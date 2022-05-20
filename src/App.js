@@ -24,10 +24,10 @@ function App() {
    <BudgetsProvider>
        <Container>
            <Header handleAddBudgetModal={() => setShowAddBudgetModal(true)} handleAddExpenseModal={() => setShowAddExpenseModal(true)}/>
-           <Cards/>
+           <Cards openAddExpense={openAddExpenseModal}/>
        </Container>
        <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
-       <AddExpenseModal show={showAddExpenseModal} handleClose={() => setShowAddExpenseModal(false)}/>
+       <AddExpenseModal show={showAddExpenseModal} defaultBudgetId={addExpenseModalBudgetId} handleClose={() => setShowAddExpenseModal(false)}/>
    </BudgetsProvider>
   );
 }
