@@ -6,6 +6,7 @@ import Cards from "./components/Cards";
 
 //CONTEXT
 import { BudgetsProvider} from "./context/BudgetContext";
+import AddBudgetModal from "./components/AddBudgetModal";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
            <Header/>
            <Cards/>
        </Container>
+       <AddBudgetModal show={true}/>
    </BudgetsProvider>
   );
 }
