@@ -12,7 +12,13 @@ import AddExpenseModal from "./components/AddExpenseModal";
 
 function App() {
     const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
-    const [showAddExpenseModal, setShowAddExpenseModal] = useState(false)
+    const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
+    const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
+
+    const openAddExpenseModal = (budgetId) => {
+        setShowAddExpenseModal(true);
+        setAddExpenseModalBudgetId(budgetId)
+    }
 
   return (
    <BudgetsProvider>
