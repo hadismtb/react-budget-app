@@ -17,9 +17,10 @@ const AddBudgetModal = ({ show, handleClose, defaultBudgetId }) => {
 
         if (description.trim()){
             addExpense({description, amount, budgetId});
+            handleClose();
+        }else {
+            descRef.current.focus();
         }
-
-        handleClose();
     }
 
     return (
