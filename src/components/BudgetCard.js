@@ -7,8 +7,9 @@ import {useBudgets} from "../context/BudgetContext";
 
 const BudgetCard = ({data}) => {
     const {name, max, id} = data;
+
     const { getBudgetExpenses } = useBudgets();
-    const amount = getBudgetExpenses(id).reduce((total, amount) => total + amount, 0)
+    const amount = getBudgetExpenses(id).reduce((total, expense) => total + expense.amount, 0)
 
     const getProgressBarVariant = (amount, max) => {
         const ratio = amount/max;
@@ -26,7 +27,7 @@ const BudgetCard = ({data}) => {
             <Card.Body>
                 <Card.Title className="d-flex justify-content-between align-items-baseline fw-normal mb-3">
                     <div className="ms-2">{name}</div>
-                    <div className="d-flex align-items-baseline">{amount ? formatNumber(amount) : '0تومان'}<span className="text-muted fs-6 ms-1">/{formatNumber(max)}</span></div>
+                    <div className="d-flex align-items-baseline">{formatNumber(amount)}<span className="text-muted fs-6 ms-1">/{formatNumber(max)}</span></div>
                 </Card.Title>
                 <ProgressBar className="rounded-pill" variant={getProgressBarVariant(amount, max)} min={0} max={max} now={amount}/>
                 <Stack direction="horizontal" gap="2" className="mt-4 justify-content-end">
