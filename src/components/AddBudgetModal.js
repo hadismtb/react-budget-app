@@ -25,7 +25,7 @@ const AddBudgetModal = ({ show, handleClose }) => {
             <Form onSubmit={handleSubmit}>
                 <Modal.Header>
                     <Modal.Title className="ms-auto">بودجه جدید</Modal.Title>
-                    <Button type="button" className="btn-close mx-0" aria-label="Close"></Button>
+                    <Button type="button" className="btn-close mx-0" aria-label="Close" onClick={handleClose}></Button>
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Group className="mb-3" controlId="name">
@@ -34,7 +34,7 @@ const AddBudgetModal = ({ show, handleClose }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="max">
                         <Form.Label>حداکثر مخارج</Form.Label>
-                        <Form.Control ref={maxRef} type="number"min={0} step={.01} required/>
+                        <Form.Control ref={maxRef} type="number" min={0} step={.01} required/>
                     </Form.Group>
                     <div className="d-flex justify-content-end">
                         <Button variant="primary" type="submit">افزودن</Button>
