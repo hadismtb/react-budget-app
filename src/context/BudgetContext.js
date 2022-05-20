@@ -9,12 +9,14 @@ export const useBudgets = () => {
     return useContext(BudgetContext);
 }
 
+export const UNCATEGORIZED_BUDGET_ID = "دسته بندی نشده"
+
 export const BudgetsProvider = ({ children }) => {
     const [budgets, setBudgets] = useLocalStorage("budgets", []);
     const [expenses, setExpenses] = useLocalStorage("expenses", []);
 
     const getBudgetExpenses = budgetId => {
-      return expenses.filter(expense => expense.budgetId === budgetId)
+        return expenses.filter(expense => expense.budgetId === `${budgetId}`)
     }
 
     const addBudget = ({name, max}) => {
