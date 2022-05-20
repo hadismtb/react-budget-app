@@ -7,15 +7,18 @@ import Cards from "./components/Cards";
 //CONTEXT
 import { BudgetsProvider} from "./context/BudgetContext";
 import AddBudgetModal from "./components/AddBudgetModal";
+import {useState} from "react";
 
 function App() {
+    const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
+
   return (
    <BudgetsProvider>
        <Container>
            <Header/>
            <Cards/>
        </Container>
-       <AddBudgetModal show={true}/>
+       <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
    </BudgetsProvider>
   );
 }
