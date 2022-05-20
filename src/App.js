@@ -12,15 +12,16 @@ import AddExpenseModal from "./components/AddExpenseModal";
 
 function App() {
     const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
+    const [showAddExpenseModal, setShowAddExpenseModal] = useState(false)
 
   return (
    <BudgetsProvider>
        <Container>
-           <Header handleAddBudgetModal={() => setShowAddBudgetModal(true)}/>
+           <Header handleAddBudgetModal={() => setShowAddBudgetModal(true)} handleAddExpenseModal={() => setShowAddExpenseModal(true)}/>
            <Cards/>
        </Container>
        <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
-       <AddExpenseModal show={true}/>
+       <AddExpenseModal show={showAddExpenseModal} handleClose={() => setShowAddExpenseModal(false)}/>
    </BudgetsProvider>
   );
 }
