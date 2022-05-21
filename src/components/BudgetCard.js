@@ -5,7 +5,7 @@ import {Button, Card, ProgressBar, Stack} from "react-bootstrap";
 import { formatNumber } from "../helpers/functions";
 import {useBudgets} from "../context/BudgetContext";
 
-const BudgetCard = ({data, openAddExpense}) => {
+const BudgetCard = ({data, openAddExpense, viewExpenseModal}) => {
     const {name, max, id, total} = data;
 
     const { getBudgetExpenses } = useBudgets();
@@ -36,7 +36,7 @@ const BudgetCard = ({data, openAddExpense}) => {
                 {
                     !total && <Stack direction="horizontal" gap="2" className="mt-4 justify-content-end">
                     <Button variant="outline-primary" onClick={() => openAddExpense(id)}>افزودن هزینه</Button>
-                    <Button variant="outline-secondary">مشاهده هزینه‌ها</Button>
+                    <Button variant="outline-secondary" onClick={() => viewExpenseModal(id)}>مشاهده هزینه‌ها</Button>
                 </Stack>
                 }
             </Card.Body>

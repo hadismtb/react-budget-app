@@ -15,15 +15,15 @@ const style = {
 }
 
 
-const Cards = ({openAddExpense}) => {
+const Cards = ({openAddExpense, viewExpenseModal}) => {
     const { budgets } = useBudgets();
 
     return (
         <div style={style}>
             {
-                budgets.map(budget => <BudgetCard openAddExpense={openAddExpense} key={budget.id} data={budget} />)
+                budgets.map(budget => <BudgetCard openAddExpense={openAddExpense}  viewExpenseModal={viewExpenseModal} key={budget.id} data={budget} />)
             }
-            <UncategorizedBudgetCard openAddExpense={openAddExpense}/>
+            <UncategorizedBudgetCard openAddExpense={openAddExpense}  viewExpenseModal={viewExpenseModal}/>
             <TotalBudgetCard />    
         </div>
     );
