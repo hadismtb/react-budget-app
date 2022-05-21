@@ -4,6 +4,7 @@ import React from 'react';
 import BudgetCard from "./BudgetCard";
 import {useBudgets} from "../context/BudgetContext";
 import UncategorizedBudgetCard from "./UncategorizedBudgetCard";
+import TotalBudgetCard from "./TotalBudgetCard"
 
 //STYLE
 const style = {
@@ -23,6 +24,7 @@ const Cards = ({openAddExpense}) => {
                 budgets.map(budget => <BudgetCard openAddExpense={openAddExpense} key={budget.id} data={budget} />)
             }
             <UncategorizedBudgetCard/>
+            <TotalBudgetCard />    
         </div>
     );
 };

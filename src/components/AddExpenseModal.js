@@ -27,7 +27,7 @@ const AddBudgetModal = ({ show, handleClose, defaultBudgetId }) => {
         <Modal show={show} onHide={handleClose}>
             <Form onSubmit={handleSubmit}>
                 <Modal.Header>
-                    <Modal.Title className="ms-auto">هزینه جدید جدید</Modal.Title>
+                    <Modal.Title className="ms-auto">هزینه جدید</Modal.Title>
                     <Button type="button" className="btn-close mx-0" aria-label="Close" onClick={handleClose}></Button>
                 </Modal.Header>
                 <Modal.Body>
