@@ -23,7 +23,7 @@ const Cards = ({openAddExpense}) => {
             {
                 budgets.map(budget => <BudgetCard openAddExpense={openAddExpense} key={budget.id} data={budget} />)
             }
-            <UncategorizedBudgetCard/>
+            <UncategorizedBudgetCard openAddExpense={openAddExpense}/>
             <TotalBudgetCard />    
         </div>
     );
